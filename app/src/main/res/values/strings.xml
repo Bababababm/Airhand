@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AirHand</string>
+    <string name="accessibility_description">Lets AirHand move a cursor and perform taps, drags, scrolls, Back, and Home from hand gestures.</string>
+</resources>
