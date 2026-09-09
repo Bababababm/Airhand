@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.pinder.airhand"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.pinder.airhand"
