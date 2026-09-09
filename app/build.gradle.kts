@@ -1,3 +1,5 @@
+import java.net.URI
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -30,8 +32,10 @@ tasks.register("downloadHandLandmarkerModel") {
         val out = handModel.asFile
         if (!out.exists()) {
             out.parentFile.mkdirs()
-            java.net.URL("https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task")
-                .openStream().use { input -> out.outputStream().use { output -> input.copyTo(output) } }
+            URI("https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task")
+                .toURL().openStream().use { input: java.io.InputStream ->
+                    out.outputStream().use { output -> input.copyTo(output) }
+                }
         }
     }
 }
